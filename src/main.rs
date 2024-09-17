@@ -1,7 +1,7 @@
 mod time;
 
 use anyhow::Ok;
-use clap::{Parser, ArgMatches};
+use clap::Parser;
 use nu_ansi_term::Color::Red;
 
 #[derive(Parser)]
