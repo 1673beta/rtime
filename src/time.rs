@@ -7,11 +7,12 @@ use peak_alloc::PeakAlloc;
 #[global_allocator]
 static PEAK_ALLOC: PeakAlloc = PeakAlloc;
 
-pub fn get_time(cmd: &str, args: &[&str]) -> Result<()> {
+pub fn get_time(cmd: &str) -> Result<()> {
     let start = Instant::now();
 
-    let output = Command::new(cmd)
-        .args(args)
+    let output = Command::new("sh")
+        .arg("-c")
+        .arg(cmd)
         .output()
         .expect("Failed to execute command");
 
